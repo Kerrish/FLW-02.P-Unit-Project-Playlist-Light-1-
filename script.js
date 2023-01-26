@@ -29,7 +29,7 @@ let songNameList = [
   "Colors of the Wind"
 ]
 
-let artists = [
+let artistsList = [
   "Ella Mai",
   "Auli'i Cravalho",
   "Idina Menzel",
@@ -88,10 +88,10 @@ function addSongInfo() {
 
 /******** this function empties the display divs each time the button is clicked so that your playlist does not repeatedly add the data too many times. Where should this function be placed???********/
 function emptyDisplay() {
-  displayImage.innerHTML = "";
-  displaySong.innerHTML = "";
-  displayArtist.innerHTML = "";
-  displayLink.innerHTML = "";
+  imageDisplay.innerHTML = "";
+  songDisplay.innerHTML = "";
+  artistDisplay.innerHTML = "";
+  linkDisplay.innerHTML = "";
 }
 
 
@@ -101,13 +101,23 @@ function displaySongInfo() {
 
 // task 8: loop through your images array and display the images to your songs in the correct div. Create three more loops. One for the song names, one for the artists, and a last one for the song links.
 
-
-
+for (let i = 0; i < imgURL.length; i++) {
+ imageDisplay.insertAdjacentHTML("beforeend",`<img scr= ${imgURL[i]}>`);
+}
 }
 
+  
+for (let i = 0; i < songNameList.length; i++) {
+ songDisplay.insertAdjacentHTML("beforeend",`<p>${songNameList[i]}</p>`);
+}
 
+for (let i = 0; i < artistsList.length; i++) {
+ artistDisplay.insertAdjacentHTML("beforeend",`<p>${artistsList[i]}</p>`);
+}
 
-
+for (let i = 0; i < imgURL.length; i++) {
+ imageDisplay.insertAdjacentHTML("beforeend",`<a href= ${imgURL[i]}></a>`);
+}
 
 // click event to add and display songs
 add.onclick = function() {
